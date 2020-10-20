@@ -23,10 +23,9 @@ class ImageGallery extends Component {
 
   render() {
     const { images, onItemClick } = this.props;
-    return (
+    return images &&(
       <ul className={s.ImageGallery} onClick={this.handleOpenModal}>
-        {images &&
-          images.map((image) => (
+        {images.map((image) => (
             <li key={image.id} className={s.ImageGalleryItem}>
               <ImageGalleryItem {...image} onItemClick={onItemClick} />
             </li>
